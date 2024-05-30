@@ -1,3 +1,4 @@
+import ismobile from '@/utils/ismobile'
 ;(function flexible(window, document) {
   //获取html的根元素
   var docEL = document.documentElement
@@ -19,7 +20,15 @@
   //set 1rem = viewWidth / 10   设置我们html元素的文字大小
   function setRemUnit() {
     //html宽度分为1/10，每一等份就是一个rem
-    var rem = docEL.clientWidth / 1500
+    var rem = null
+
+    if (ismobile) {
+      // rem = docEL.clientWidth / 350
+      rem = docEL.clientWidth / 600
+    } else {
+      rem = docEL.clientWidth / 1500
+    }
+
     docEL.style.fontSize = rem + 'px'
   }
   setRemUnit()

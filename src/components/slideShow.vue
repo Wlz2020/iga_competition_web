@@ -1,12 +1,19 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+import ismobile from '@/utils/ismobile'
+
+const slideImgUrl = ref('')
+
+if (ismobile) {
+  slideImgUrl.value = 'https://website.xdcdn.net/poster/187168/IGA%E6%AF%94%E8%B5%9B/80aJQzv0.png'
+} else {
+  slideImgUrl.value = 'https://website.xdcdn.net/poster/187168/IGA%E6%AF%94%E8%B5%9B/8040dJde.png'
+}
+</script>
 
 <template>
   <div class="slide-show-wrap">
-    <img
-      class="img"
-      src="https://website.xdcdn.net/poster/187168/IGA%E6%AF%94%E8%B5%9B/8040dJde.png"
-      alt=""
-    />
+    <img class="img" :src="slideImgUrl" />
   </div>
 </template>
 

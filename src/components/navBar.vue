@@ -1,6 +1,12 @@
 <script setup>
+import ismobile from '@/utils/ismobile'
+import containWidth from '@/utils/page-contain-width'
+// import { ref, onMounted } from 'vue'
+
+// const currentNavIndex = ref(0)
+
 function scrollTo(num) {
-  const fixedNavHeight = 80 // 假设导航栏的高度为50px
+  const fixedNavHeight = 90 // 假设导航栏的高度为50px
 
   if (num === 0) {
     window.scrollTo(0, 0)
@@ -18,29 +24,49 @@ function scrollTo(num) {
     })
   }
 }
+
+// function absoluteBottomMyElement() {
+//   document.querySelectorAll('.nav').forEach((myElement, myElementIndex) => {
+//     const rectMyElement = myElement.getBoundingClientRect()
+//     const absoluteTopMyElement = rectMyElement.top + window.scrollY
+//     const absoluteBottomMyElement = absoluteTopMyElement + myElement.offsetHeight
+//     window.addEventListener('scroll', () => {
+//       const currentScroll = window.scrollY
+//       if (currentScroll >= absoluteTopMyElement && currentScroll < absoluteBottomMyElement) {
+//         console.log('经过元素了', myElementIndex)
+//         currentNavIndex.value = myElementIndex + 1
+//       }
+//     })
+//   })
+// }
+
+// onMounted(() => {
+//   // absoluteBottomMyElement()
+// })
 </script>
 
 <template>
   <nav class="nav-wrap">
-    <div class="box-wrap">
+    <div class="box-wrap" :style="{ width: containWidth }">
       <div class="item img-wrap" @click="scrollTo(0)">
         <img
           class="img"
           src="https://website.xdcdn.net/poster/187168/IGA%E6%AF%94%E8%B5%9B/80aNWNtf.png"
         />
       </div>
+      <template v-if="!ismobile">
+        <div class="item nav-item" @click="scrollTo(1)">赛事简介</div>
 
-      <div class="item" @click="scrollTo(1)">赛事简介</div>
+        <div class="item nav-item" @click="scrollTo(2)">评审组织</div>
 
-      <div class="item" @click="scrollTo(2)">评审组织</div>
+        <div class="item nav-item" @click="scrollTo(3)">作品要求</div>
 
-      <div class="item" @click="scrollTo(3)">作品要求</div>
+        <div class="item nav-item" @click="scrollTo(4)">奖项设置</div>
 
-      <div class="item" @click="scrollTo(4)">奖项设置</div>
+        <div class="item nav-item" @click="scrollTo(5)">评审流程</div>
+      </template>
 
-      <div class="item" @click="scrollTo(5)">评审流程</div>
-
-      <div class="item" @click="scrollTo(6)">我要参赛</div>
+      <div class="item nav-item" @click="scrollTo(6)">我要参赛</div>
     </div>
   </nav>
 
@@ -56,6 +82,7 @@ function scrollTo(num) {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
   background-color: #11b6d1;
 
   .box-wrap {
@@ -63,7 +90,6 @@ function scrollTo(num) {
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    width: 80%;
     height: inherit;
   }
 }

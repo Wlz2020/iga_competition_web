@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "ismobilejs": "^1.1.1",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "pinia": "^2.1.7",
