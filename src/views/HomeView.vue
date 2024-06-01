@@ -5,6 +5,15 @@ import SlideShow from '@/components/slideShow.vue'
 import PageFooter from '@/components/pageFooter.vue'
 import ismobile from '@/utils/ismobile'
 import containWidth from '@/utils/page-contain-width'
+import mainTitleImg from '@/assets/img/main_title_bg.png'
+import subTitleImg from '@/assets/img/sub_title_bg.png'
+
+import award1Img from '@/assets/img/planA/award1.png'
+import award2Img from '@/assets/img/planA/award2.png'
+import award3Img from '@/assets/img/planA/award3.png'
+import award4Img from '@/assets/img/planA/award4.png'
+import award5Img from '@/assets/img/planA/award5.png'
+import award6Img from '@/assets/img/planA/award6.png'
 
 onMounted(() => {
   const eleList = document.querySelectorAll('.box-wrap')
@@ -16,12 +25,15 @@ onMounted(() => {
 
 const testUrl = 'https://website.xdcdn.net/poster/187168/IGA%E6%AF%94%E8%B5%9B/80aJQzv0.png'
 
+const nav1Content =
+  '由IGA Studio，TapTap游戏社区联合发起的独立游戏创作大赛，面向青年人举办的数字媒体技术竞赛活动。大赛旨在创建一个鼓励年轻独立游戏开发者群体勇敢表达创意，探索玩法，享受游戏开发魅力的交流平台，欢迎任何专业或非专业的独立游戏爱好者报名参加，除了完成度，此次赛事同样注重创意表达与玩法设计，在赛事期间主办方也会尽最大努力给开发者提供各种各样的帮助，组委会也为优秀的作品提供后续孵化支持。'
+
 const nav2List = [
   {
     title: '评审团介绍',
     list: [
       {
-        text: '评审团由从业人士及相关行业人士共同组成'
+        text: '评审团由从业人士及相关行业人士共同组成。'
       },
       {
         text: '评审团可以在大赛赛制和流程基础上，独立开展评审工作。'
@@ -144,27 +156,39 @@ const nav3List = [
 
 const nav4List = [
   {
-    img: testUrl,
+    img: award1Img,
     name: '大赛优胜作品',
     desc: '授予在游戏创意，画面，叙事，技术力等多方面综合表现力最强的作品。游戏完成度高，体验流畅，内容丰富，创作角度新颖，且具备较高的迭代潜力。',
     award: '奖品:PS5光驱版+Xbox Series X+Steam Deck+Nintendo Switch'
   },
   {
-    img: testUrl,
+    img: award2Img,
     name: '最佳画面作品',
     desc: '授予在游戏美术风格，画面表现力，场景结构，特效等视觉综合表现最优秀的作品。',
     award: '奖品:PS5光驱版'
   },
   {
-    img: testUrl,
-    name: '大赛优胜作品',
-    desc: '授予在游戏创意，画面，叙事，技术力等多方面综合表现力最强的作品。游戏完成度高，体验流畅，内容丰富，创作角度新颖，且具备较高的迭代潜力。',
-    award: '奖品:PS5光驱版+Xbox Series X+Steam Deck+Nintendo Switch'
+    img: award3Img,
+    name: '最佳创意作品',
+    desc: '授予在关卡设计，核心玩法设计，游戏流程设计等游戏设计方向综合表现最创新的作品。',
+    award: '奖品:PS5光驱版'
   },
   {
-    img: testUrl,
-    name: '最佳画面作品',
-    desc: '授予在游戏美术风格，画面表现力，场景结构，特效等视觉综合表现最优秀的作品。',
+    img: award4Img,
+    name: '最佳叙事作品',
+    desc: '授予在游戏剧情设计，游戏文案设计，游戏背景设计与概念深度方向综合表现最独特且优秀的作亟。',
+    award: '奖品:PS5光驱版'
+  },
+  {
+    img: award5Img,
+    name: '最佳学生作品',
+    desc: '授予由学生团体开发，在学生提交作品中综合表现力最强的作品。游戏完成度较高，体验流畅，内容丰富。',
+    award: '奖品:PS5光驱版'
+  },
+  {
+    img: award6Img,
+    name: '最具潜力游戏',
+    desc: '授予现阶段表现力虽然不是最突出，但是有着创意十足的设计，并且经评委会认定有着极强迭代潜力的作品。',
     award: '奖品:PS5光驱版'
   }
 ]
@@ -221,27 +245,33 @@ const nav6List = [
     <!-- 赛事简介 -->
     <div id="nav1" class="nav">
       <div class="box-wrap">
-        <div class="title">赛事简介</div>
-        <div class="content">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum quaerat fugiat expedita
-          excepturi. Saepe quasi amet eligendi iusto? Esse similique distinctio quisquam sunt!
-          Ipsum, ab ut vitae tempora facere dignissimos. Neque pariatur aliquam et id repellendus.
-          Laudantium placeat provident veniam omnis ad cum reprehenderit ab expedita. Facilis ab
-          nulla sed, suscipit sint cum quisquam assumenda natus laborum quasi molestias corporis?
-          Nulla laboriosam laborum voluptatem ipsum maiores deserunt provident molestiae veritatis
-          et similique, rerum voluptatum iste, illo, ducimus doloremque beatae magnam veniam.
-          Perspiciatis obcaecati deserunt architecto autem nesciunt enim quam dolor.
+        <div class="title">
+          <div class="main-img">
+            <img :src="mainTitleImg" />
+          </div>
+          <div>赛事简介</div>
         </div>
+        <div class="content">{{ nav1Content }}</div>
       </div>
     </div>
 
     <!-- 评审组织 -->
     <div id="nav2" class="nav">
       <div class="box-wrap">
-        <div class="title">评审组织</div>
+        <div class="title">
+          <div class="main-img">
+            <img :src="mainTitleImg" />
+          </div>
+          <div>评审组织</div>
+        </div>
         <div class="content">
           <div class="list" v-for="item in nav2List" :key="item.title">
-            <div class="sunb-title">{{ item.title }}</div>
+            <div class="sunb-title">
+              <div class="sub-img">
+                <img :src="subTitleImg" />
+              </div>
+              <div>{{ item.title }}</div>
+            </div>
             <div class="item" v-for="(item2, index2) in item.list" :key="item2.text">
               <div class="index-box">
                 <div class="index">{{ index2 + 1 }}</div>
@@ -251,7 +281,12 @@ const nav6List = [
           </div>
 
           <div class="list person-list" v-for="item in nav2ListPerson" :key="item.title">
-            <div class="sunb-title">{{ item.title }}</div>
+            <div class="sunb-title">
+              <div class="sub-img">
+                <img :src="subTitleImg" />
+              </div>
+              <div>{{ item.title }}</div>
+            </div>
             <div class="item-box row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
               <div class="col item" v-for="item2 in item.list" :key="item2.text">
                 <div class="p-3">
@@ -271,10 +306,20 @@ const nav6List = [
     <!-- 作品要求 -->
     <div id="nav3" class="nav">
       <div class="box-wrap">
-        <div class="title">作品要求</div>
+        <div class="title">
+          <div class="main-img">
+            <img :src="mainTitleImg" />
+          </div>
+          <div>作品要求</div>
+        </div>
         <div class="content">
           <div class="list" v-for="item in nav3List" :key="item.title">
-            <div class="sunb-title">{{ item.title }}</div>
+            <div class="sunb-title">
+              <div class="sub-img">
+                <img :src="subTitleImg" />
+              </div>
+              <div>{{ item.title }}</div>
+            </div>
             <div class="item" v-for="(item2, index2) in item.list" :key="item2.text">
               <div class="index-box">
                 <div class="index">{{ index2 + 1 }}</div>
@@ -299,24 +344,40 @@ const nav6List = [
     <!-- 奖项设置 -->
     <div id="nav4" class="nav">
       <div class="box-wrap">
-        <div class="title">奖项设置</div>
+        <div class="title">
+          <div class="main-img">
+            <img :src="mainTitleImg" />
+          </div>
+          <div>奖项设置</div>
+        </div>
         <div class="list list1">
-          <div class="sub-title">评奖说明</div>
+          <div class="sub-title">
+            <span class="un-select">- </span>评奖说明<span class="un-select"> -</span>
+          </div>
           <div class="text">
             为鼓励更多参赛选手投入到创新与精致的游戏创作中，大赛组委会设立的评审团将评选出一个综合表现最优秀的作品，数个在不同领域有突出表现力的作品。评审团将遵守公平公正的评审态度，以专业的角度对所有参赛作品予以打分。进入到决赛的作品评审团会采取更为细致严格的答辩方式评判作品。
           </div>
         </div>
         <div class="list list2">
-          <div class="sub-title">奖项设置</div>
+          <div class="sub-title">
+            <span class="un-select">- </span>奖项设置<span class="un-select"> -</span>
+          </div>
           <div class="itme" v-for="item in nav4List" :key="item.name">
             <div class="row1">
-              <div class="img-contain">
-                <img :src="item.img" />
+              <div class="sub-img">
+                <img :src="subTitleImg" />
               </div>
               <div class="text">{{ item.name }}</div>
             </div>
 
-            <div class="row2">{{ item.desc }}</div>
+            <div class="row2">
+              <div class="img-contain">
+                <img :src="item.img" />
+              </div>
+              <div class="text">
+                {{ item.desc }}
+              </div>
+            </div>
 
             <div class="row3">
               <div class="text">{{ item.award }}</div>
@@ -390,15 +451,23 @@ const nav6List = [
 </template>
 
 <style lang="less" scoped>
-@titleColor: #000;
+@titleColor: #fff;
 @titleFontSize: 30rem;
 @contentFontColor: #000;
 @contentFontSize: 20rem;
 @contentMargin: 50rem;
-@contentPadding: 30rem;
+@contentPadding: 40rem;
+@mianTitleImgWidth: 2289rem;
+@mianTitleImgeight: 685rem;
+@subTitleImgWidtht: 1722rem;
+@subTitleImgHeight: 560rem;
+
+* {
+  color: @titleColor;
+}
 
 .page {
-  background-color: #d5e4f4;
+  background-color: #000;
 }
 
 .text {
@@ -413,33 +482,63 @@ const nav6List = [
     font-size: @contentFontSize;
     color: @contentFontColor;
     padding: @contentPadding;
+    padding-bottom: 60rem;
+    border: 1rem solid #303436;
 
     .title {
+      position: relative;
       text-align: center;
-      color: @titleColor;
       font-size: @titleFontSize;
+      margin-bottom: 50rem;
+
+      .main-img {
+        position: absolute;
+        top: -14rem;
+        left: calc(50% - (@mianTitleImgWidth / 9) / 2);
+        width: calc(@mianTitleImgWidth / 9);
+        height: calc(@mianTitleImgeight / 9);
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
   }
 }
 
 .nav {
   .box-wrap {
-    background-color: #fff;
-    border-radius: 20rem;
+    background-color: #000;
   }
 
   .list {
     &:not(:first-child) {
-      margin-top: 30rem;
+      margin-top: 60rem;
     }
 
     .sunb-title {
+      position: relative;
       font-size: 20rem;
+      margin: 40rem 0;
+      padding-left: 26rem;
+
+      .sub-img {
+        position: absolute;
+        top: -12rem;
+        left: 0rem;
+        width: calc(@subTitleImgWidtht / 10);
+        height: calc(@subTitleImgHeight / 10);
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
 
     .item {
       display: flex;
-      padding-left: 15rem;
 
       &:not(:last-child) {
         margin: 15rem 0;
@@ -447,11 +546,12 @@ const nav6List = [
 
       .index-box {
         .index {
-          background-color: lightblue;
+          background-color: #fff;
           height: 28rem;
           width: 28rem;
           font-size: 18rem;
-          color: #fff;
+          color: #000;
+          font-weight: bold;
           text-align: center;
           border-radius: 100%;
         }
@@ -502,6 +602,12 @@ const nav6List = [
   }
 }
 
+#nav3 {
+  .sunb-title {
+    font-size: 19rem;
+  }
+}
+
 #nav4 {
   .list {
     .sub-title {
@@ -521,35 +627,66 @@ const nav6List = [
 #nav4 {
   .list2 {
     .itme {
-      margin-top: 20rem;
+      margin-top: 50rem;
+      margin-bottom: 80rem;
 
       & > div {
         margin: 20rem 0;
       }
 
       .row1 {
+        height: calc(@subTitleImgHeight / 10);
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        position: relative;
+        padding-left: 26rem;
 
-        .img-contain {
-          width: 50rem;
-          height: 50rem;
-          margin-right: 10rem;
+        .sub-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: calc(@subTitleImgWidtht / 10);
+          height: calc(@subTitleImgHeight / 10);
 
           img {
             width: 100%;
             height: 100%;
-            border-radius: 100%;
+          }
+        }
+
+        .img-contain {
+          width: 50rem;
+          height: 50rem;
+
+          img {
+            width: 100%;
+            height: 100%;
           }
         }
 
         .text {
-          font-size: 19rem;
+          font-size: 18rem;
         }
       }
 
       .row2 {
-        font-size: 17rem;
+        display: flex;
+        align-items: center;
+
+        .img-contain {
+          img {
+            width: calc(512rem / 9);
+            height: calc(512rem / 9);
+          }
+
+          margin-right: 10rem;
+        }
+
+        .text {
+          flex: 1;
+          font-size: 17rem;
+        }
       }
 
       .row3 {
@@ -562,7 +699,7 @@ const nav6List = [
           font-size: 17rem;
           padding: 0 30rem;
           width: max-content;
-          border-bottom: 1px solid #000;
+          border-bottom: 1px solid @titleColor;
         }
       }
     }

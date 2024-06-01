@@ -1,6 +1,8 @@
 <script setup>
 import ismobile from '@/utils/ismobile'
 import containWidth from '@/utils/page-contain-width'
+import logoImg from '@/assets/img/iga_logo.png'
+
 // import { ref, onMounted } from 'vue'
 
 // const currentNavIndex = ref(0)
@@ -48,25 +50,22 @@ function scrollTo(num) {
 <template>
   <nav class="nav-wrap">
     <div class="box-wrap" :style="{ width: containWidth }">
-      <div class="item img-wrap" @click="scrollTo(0)">
-        <img
-          class="img"
-          src="https://website.xdcdn.net/poster/187168/IGA%E6%AF%94%E8%B5%9B/80aNWNtf.png"
-        />
+      <div class="item img-wrap" @click="scrollTo(0)" @mouseover="scrollTo(0)">
+        <img class="img" :src="logoImg" />
       </div>
       <template v-if="!ismobile">
-        <div class="item nav-item" @click="scrollTo(1)">赛事简介</div>
+        <div class="item nav-item" @click="scrollTo(1)" @mouseover="scrollTo(1)">赛事简介</div>
 
-        <div class="item nav-item" @click="scrollTo(2)">评审组织</div>
+        <div class="item nav-item" @click="scrollTo(2)" @mouseover="scrollTo(2)">评审组织</div>
 
-        <div class="item nav-item" @click="scrollTo(3)">作品要求</div>
+        <div class="item nav-item" @click="scrollTo(3)" @mouseover="scrollTo(3)">作品要求</div>
 
-        <div class="item nav-item" @click="scrollTo(4)">奖项设置</div>
+        <div class="item nav-item" @click="scrollTo(4)" @mouseover="scrollTo(4)">奖项设置</div>
 
-        <div class="item nav-item" @click="scrollTo(5)">评审流程</div>
+        <div class="item nav-item" @click="scrollTo(5)" @mouseover="scrollTo(5)">评审流程</div>
       </template>
 
-      <div class="item nav-item" @click="scrollTo(6)">我要参赛</div>
+      <div class="item nav-item" @click="scrollTo(6)" @mouseover="scrollTo(6)">我要参赛</div>
     </div>
   </nav>
 
@@ -74,7 +73,13 @@ function scrollTo(num) {
 </template>
 
 <style lang="less" scoped>
+@balckTheme: #11b6d1;
+@titleColor: #fff;
 @navHight: 80rem;
+
+* {
+  color: @titleColor;
+}
 
 .nav-wrap {
   width: 100%;
@@ -83,7 +88,7 @@ function scrollTo(num) {
   top: 0;
   left: 0;
   z-index: 2;
-  background-color: #11b6d1;
+  background-color: @balckTheme;
 
   .box-wrap {
     display: flex;
@@ -99,8 +104,8 @@ function scrollTo(num) {
 }
 
 .img-wrap {
-  width: calc(230rem / 2);
-  height: calc(70rem / 2);
+  width: calc(660rem / 9);
+  height: calc(440rem / 9);
 
   .img {
     width: 100%;
@@ -112,7 +117,6 @@ function scrollTo(num) {
   font-family: inherit;
   font-size: 20rem;
   font-weight: 700;
-  color: #fff;
   line-height: 1.5;
 
   &:hover {

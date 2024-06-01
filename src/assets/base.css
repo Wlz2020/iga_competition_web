@@ -103,3 +103,9 @@ body {
   border-radius: 0;
   background: rgba(0, 0, 0, 0.1);
 }
+
+.un-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}

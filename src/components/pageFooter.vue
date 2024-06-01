@@ -1,6 +1,5 @@
 <script setup>
 const testUrl = 'https://website.xdcdn.net/poster/187168/IGA%E6%AF%94%E8%B5%9B/80aJQzv0.png'
-console.log(testUrl)
 </script>
 
 <template>
@@ -21,6 +20,12 @@ console.log(testUrl)
 </template>
 
 <style lang="less" scoped>
+@titleColor: #fff;
+
+* {
+  color: @titleColor;
+}
+
 .footer-wrap {
   .box-wrap {
     margin: 0 auto;
@@ -32,14 +37,12 @@ console.log(testUrl)
   }
 
   .copy {
-    color: #000;
     font-size: 16rem;
     margin-bottom: 20rem;
   }
 
   .text {
     margin-top: 50rem;
-    color: #000;
     font-size: 28rem;
     font-weight: bold;
   }
