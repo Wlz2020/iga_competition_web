@@ -495,7 +495,7 @@ const nav6List = [
     color: @contentFontColor;
     padding: @contentPadding;
     padding-bottom: 60rem;
-    background-color: rgba(000, 000, 000, 0.4);
+    background-color: rgba(000, 000, 000, 0.25);
 
     .title {
       position: relative;
