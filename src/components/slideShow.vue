@@ -19,6 +19,8 @@ if (ismobile) {
 
 <style lang="less" scoped>
 .slide-show-wrap {
+  position: relative;
+  z-index: 1;
   .img {
     width: 100%;
     height: 100%;

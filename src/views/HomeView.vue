@@ -457,8 +457,8 @@ const nav6List = [
 @contentFontSize: 20rem;
 @contentMargin: 50rem;
 @contentPadding: 40rem;
-@mianTitleImgWidth: 2289rem;
-@mianTitleImgeight: 685rem;
+@mianTitleImgWidth: 3072rem;
+@mianTitleImgeight: 1383rem;
 @subTitleImgWidtht: 1722rem;
 @subTitleImgHeight: 560rem;
 
@@ -476,6 +476,8 @@ const nav6List = [
 
 .nav {
   margin: @contentMargin 0;
+  position: relative;
+  z-index: 1;
 
   .box-wrap {
     margin: 0 auto;
@@ -483,7 +485,7 @@ const nav6List = [
     color: @contentFontColor;
     padding: @contentPadding;
     padding-bottom: 60rem;
-    border: 1rem solid #303436;
+    border: 1px solid #716f6f;
 
     .title {
       position: relative;
@@ -493,7 +495,7 @@ const nav6List = [
 
       .main-img {
         position: absolute;
-        top: -14rem;
+        top: -40rem;
         left: calc(50% - (@mianTitleImgWidth / 9) / 2);
         width: calc(@mianTitleImgWidth / 9);
         height: calc(@mianTitleImgeight / 9);
@@ -509,7 +511,7 @@ const nav6List = [
 
 .nav {
   .box-wrap {
-    background-color: #000;
+    // background-color: #000;
   }
 
   .list {

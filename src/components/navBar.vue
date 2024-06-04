@@ -2,6 +2,7 @@
 import ismobile from '@/utils/ismobile'
 import containWidth from '@/utils/page-contain-width'
 import logoImg from '@/assets/img/iga_logo.png'
+import mainBgImg from '@/assets/img/main-bg.png'
 
 // import { ref, onMounted } from 'vue'
 
@@ -69,6 +70,10 @@ function scrollTo(num) {
     </div>
   </nav>
 
+  <div class="bg-img">
+    <img :src="mainBgImg" alt="" />
+  </div>
+
   <div class="placeholder-box"></div>
 </template>
 
@@ -79,6 +84,19 @@ function scrollTo(num) {
 
 * {
   color: @titleColor;
+}
+
+.bg-img {
+  position: fixed;
+  top: @navHight;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - @navHight);
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .nav-wrap {
