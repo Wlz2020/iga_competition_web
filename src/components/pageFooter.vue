@@ -27,6 +27,8 @@ const testUrl = 'https://website.xdcdn.net/poster/187168/IGA%E6%AF%94%E8%B5%9B/8
 }
 
 .footer-wrap {
+  position: relative;
+
   .box-wrap {
     margin: 0 auto;
     width: 65%;

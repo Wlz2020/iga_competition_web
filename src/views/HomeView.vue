@@ -390,7 +390,12 @@ const nav6List = [
     <!-- 评审流程 -->
     <div id="nav5" class="nav">
       <div class="box-wrap">
-        <div class="title">评审流程</div>
+        <div class="title">
+          <div class="main-img">
+            <img :src="mainTitleImg" />
+          </div>
+          <div>评审流程</div>
+        </div>
         <div class="content">
           <div class="list">
             <div class="item" v-for="(item, index) in nav5List" :key="item.text">
@@ -407,7 +412,12 @@ const nav6List = [
     <!-- 报名流程 -->
     <div id="nav6" class="nav">
       <div class="box-wrap">
-        <div class="title">报名流程</div>
+        <div class="title">
+          <div class="main-img">
+            <img :src="mainTitleImg" />
+          </div>
+          <div>报名流程</div>
+        </div>
         <div class="content">
           <div class="list">
             <div class="item" v-for="(item, index) in nav6List" :key="item.text">
@@ -485,7 +495,7 @@ const nav6List = [
     color: @contentFontColor;
     padding: @contentPadding;
     padding-bottom: 60rem;
-    border: 1px solid #716f6f;
+    background-color: rgba(000, 000, 000, 0.65);
 
     .title {
       position: relative;
