@@ -1,15 +1,11 @@
 <script setup>
 import ismobile from '@/utils/ismobile'
 import containWidth from '@/utils/page-contain-width'
-import logoImg from '@/assets/img/iga_logo.png'
+import logoImg from '@/assets/img/copyright/sponsor.png'
 import mainBgImg from '@/assets/img/main-bg.png'
 
-// import { ref, onMounted } from 'vue'
-
-// const currentNavIndex = ref(0)
-
 function scrollTo(num) {
-  const fixedNavHeight = 90 // 假设导航栏的高度为50px
+  const fixedNavHeight = 90 // 假设导航栏的高度为90px
 
   if (num === 0) {
     window.scrollTo(0, 0)
@@ -27,25 +23,6 @@ function scrollTo(num) {
     })
   }
 }
-
-// function absoluteBottomMyElement() {
-//   document.querySelectorAll('.nav').forEach((myElement, myElementIndex) => {
-//     const rectMyElement = myElement.getBoundingClientRect()
-//     const absoluteTopMyElement = rectMyElement.top + window.scrollY
-//     const absoluteBottomMyElement = absoluteTopMyElement + myElement.offsetHeight
-//     window.addEventListener('scroll', () => {
-//       const currentScroll = window.scrollY
-//       if (currentScroll >= absoluteTopMyElement && currentScroll < absoluteBottomMyElement) {
-//         console.log('经过元素了', myElementIndex)
-//         currentNavIndex.value = myElementIndex + 1
-//       }
-//     })
-//   })
-// }
-
-// onMounted(() => {
-//   // absoluteBottomMyElement()
-// })
 </script>
 
 <template>
@@ -122,12 +99,12 @@ function scrollTo(num) {
 }
 
 .img-wrap {
-  width: calc(660rem / 9);
-  height: calc(440rem / 9);
+  width: 80rem;
 
   .img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
   }
 }
 

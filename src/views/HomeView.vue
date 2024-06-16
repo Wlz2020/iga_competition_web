@@ -8,12 +8,20 @@ import containWidth from '@/utils/page-contain-width'
 import mainTitleImg from '@/assets/img/main_title_bg.png'
 import subTitleImg from '@/assets/img/sub_title_bg.png'
 
-import award1Img from '@/assets/img/planA/award1.png'
-import award2Img from '@/assets/img/planA/award2.png'
-import award3Img from '@/assets/img/planA/award3.png'
-import award4Img from '@/assets/img/planA/award4.png'
-import award5Img from '@/assets/img/planA/award5.png'
-import award6Img from '@/assets/img/planA/award6.png'
+import award1Img from '@/assets/img/award1.png'
+import award2Img from '@/assets/img/award2.png'
+import award3Img from '@/assets/img/award3.png'
+import award4Img from '@/assets/img/award4.png'
+import award5Img from '@/assets/img/award5.png'
+import award6Img from '@/assets/img/award6.png'
+
+import imgReviewPerson1 from '@/assets/img/reviewPerson1.png'
+import imgReviewPerson2 from '@/assets/img/reviewPerson2.png'
+import imgReviewPerson3 from '@/assets/img/reviewPerson3.png'
+import imgReviewPerson4 from '@/assets/img/reviewPerson4.png'
+
+import feishuQRImg from '@/assets/img/feishu_qr.png'
+import qqGroupImg from '@/assets/img/qq_group.png'
 
 onMounted(() => {
   const eleList = document.querySelectorAll('.box-wrap')
@@ -23,10 +31,8 @@ onMounted(() => {
   console.log(ismobile)
 })
 
-const testUrl = 'https://website.xdcdn.net/poster/187168/IGA%E6%AF%94%E8%B5%9B/80aJQzv0.png'
-
 const nav1Content =
-  '由IGA Studio，TapTap游戏社区联合发起的独立游戏创作大赛，面向青年人举办的数字媒体技术竞赛活动。大赛旨在创建一个鼓励年轻独立游戏开发者群体勇敢表达创意，探索玩法，享受游戏开发魅力的交流平台，欢迎任何专业或非专业的独立游戏爱好者报名参加，除了完成度，此次赛事同样注重创意表达与玩法设计，在赛事期间主办方也会尽最大努力给开发者提供各种各样的帮助，组委会也为优秀的作品提供后续孵化支持。'
+  '本次大赛旨在创建一个鼓励海内外年轻独立游戏开发者群体勇敢表达创意，探索玩法，享受游戏开发魅力的交流平台，欢迎任何专业或非专业的独立游戏爱好者报名参加，除了完成度，此次赛事同样注重创意表达与玩法设计，在赛事期间主办方也会尽最大努力给开发者提供各种各样的帮助，组委会也为优秀的作品提供后续孵化支持。'
 
 const nav2List = [
   {
@@ -59,42 +65,27 @@ const nav2List = [
 
 const nav2ListPerson = [
   {
-    title: '评审团成员',
+    title: '评审团队',
     list: [
       {
-        img: testUrl,
-        position: 'position',
-        name: 'Lorem'
+        img: imgReviewPerson1,
+        position: 'IGA Studio创始人',
+        name: '李肇文（Brad）'
       },
       {
-        img: testUrl,
-        position: 'position',
-        name: 'Lorem'
+        img: imgReviewPerson2,
+        position: '独立之光副总裁',
+        name: '熊Tony'
       },
       {
-        img: testUrl,
-        position: 'position',
-        name: 'Lorem'
+        img: imgReviewPerson3,
+        position: '现任南京艺术学院传媒学院院长',
+        name: '薛峰'
       },
       {
-        img: testUrl,
-        position: 'position',
-        name: 'Lorem'
-      },
-      {
-        img: testUrl,
-        position: 'position',
-        name: 'Lorem'
-      },
-      {
-        img: testUrl,
-        position: 'position',
-        name: 'Lorem'
-      },
-      {
-        img: testUrl,
-        position: 'position',
-        name: 'Lorem'
+        img: imgReviewPerson4,
+        position: '现任游戏公司Stumbling Cat 执行董事（CEO）',
+        name: 'Renee Gittins'
       }
     ]
   }
@@ -105,10 +96,10 @@ const nav3List = [
     title: '作品开发要求',
     list: [
       {
-        text: '在提交截止日期(8月1日)前，选手可自由进行作品开发。'
+        text: '在提交截止日期(8月31日)前，选手可自由进行作品开发。'
       },
       {
-        text: '原则上选手可以使用半年内正在开发的项目参加比赛。'
+        text: '原则上选手可以使用一年内正在开发的项目参加比赛。'
       },
       {
         text: '所有参赛作品为不限制平台的电子游戏。'
@@ -129,10 +120,7 @@ const nav3List = [
         text: '队伍负责人需添加活动负责人微信进入队长通知群，在页面点击【我要参赛】查看详情。'
       },
       {
-        text: '在提交截止日期前(8月1日)前，选手可在任意时段提交作品，提交时需要重新填写作品信息表。'
-      },
-      {
-        text: '选手可以个人或队伍身份提交作品，个人身份提交需承担80%以上的作品内容开发。一个队伍只需要队伍负责人提交作品，其他选手无需重复提交。'
+        text: '在提交截止日期前(8月31日)前，选手可在任意时段提交作品，提交时需要重新填写作品信息表。选手可以个人或队伍身份提交作品，个人身份提交需承担80%以上的作品内容开发。一个队伍只需要队伍负责人提交作品，其他选手无需重复提交。'
       },
       {
         text: '每个选手/负责人只能申报/参与一项作品。'
@@ -143,12 +131,37 @@ const nav3List = [
       {
         signal: 'email',
         email: 'brand@igagame.com',
-        text1: '作品提交打包上传至赛事邮箱',
+        text1: '作品提交打包上传至赛事邮箱:',
         text2:
-          '，填写作品信息表，包含必传材料:运行文件，移动端apk;选传材料:开发Vlog/Plog，其他游戏介绍视频/文档/PPT。缺失任一必传材料视为无效参赛。'
+          '，填写作品信息表，包含必传材料:运行文件;宣传材料:开发Vlog/Plog，其他游戏介绍视频/文档/PPT。缺失任一必传材料视为无效参赛。'
       },
       {
         text: '作品提交后在截止日期前可以进行修改并重新提交到邮箱。'
+      }
+    ]
+  },
+  {
+    title: '参赛须知',
+    list: [
+      {
+        text: '队伍负责人先添加活动负责人微信，进入队长通知群，在官网页面点击【我要参赛】查看详情。'
+      },
+      {
+        signal: 'submitContent',
+        content: '提交时一并提交队伍信息表格。',
+        text: '在提交截止日期前（8月30日）前，选手可在任意时段提交作品。'
+      },
+      {
+        text: '选手可以个人或队伍身份提交作品，个人身份提交需承担80%以上的作品内容开发。'
+      },
+      {
+        text: '一个队伍只需要队伍负责人提交作品，其他选手无需重复提交。'
+      },
+      {
+        text: '每个选手/负责人只能申报/参与一项作品。提交的作品需达到至少40%完成度，能通过demo展示核心玩法循环。'
+      },
+      {
+        text: '作品提交后在截止日期前可以进行修改并重新提交到网站。'
       }
     ]
   }
@@ -159,37 +172,37 @@ const nav4List = [
     img: award1Img,
     name: '大赛优胜作品',
     desc: '授予在游戏创意，画面，叙事，技术力等多方面综合表现力最强的作品。游戏完成度高，体验流畅，内容丰富，创作角度新颖，且具备较高的迭代潜力。',
-    award: '奖品:PS5光驱版+Xbox Series X+Steam Deck+Nintendo Switch'
+    award: '奖品: 5000元'
   },
   {
     img: award2Img,
     name: '最佳画面作品',
     desc: '授予在游戏美术风格，画面表现力，场景结构，特效等视觉综合表现最优秀的作品。',
-    award: '奖品:PS5光驱版'
+    award: '奖品: 3000元'
   },
   {
     img: award3Img,
     name: '最佳创意作品',
     desc: '授予在关卡设计，核心玩法设计，游戏流程设计等游戏设计方向综合表现最创新的作品。',
-    award: '奖品:PS5光驱版'
+    award: '奖品: 5000元'
   },
   {
     img: award4Img,
     name: '最佳叙事作品',
-    desc: '授予在游戏剧情设计，游戏文案设计，游戏背景设计与概念深度方向综合表现最独特且优秀的作亟。',
-    award: '奖品:PS5光驱版'
+    desc: '授予在游戏剧情设计，游戏文案设计，游戏背景设计与概念深度方向综合表现最独特且优秀的作品。',
+    award: '奖品: 3000元'
   },
   {
     img: award5Img,
     name: '最佳学生作品',
     desc: '授予由学生团体开发，在学生提交作品中综合表现力最强的作品。游戏完成度较高，体验流畅，内容丰富。',
-    award: '奖品:PS5光驱版'
+    award: '奖品: 2000元'
   },
   {
     img: award6Img,
     name: '最具潜力游戏',
-    desc: '授予现阶段表现力虽然不是最突出，但是有着创意十足的设计，并且经评委会认定有着极强迭代潜力的作品。',
-    award: '奖品:PS5光驱版'
+    desc: '授予现阶段表现力虽然不是最突出，但是有着创意玩法与设计的作品，并且经业内评委认定有着迭代潜力的作品。',
+    award: ''
   }
 ]
 
@@ -208,31 +221,6 @@ const nav5List = [
   },
   {
     text: '8月26日-8月31日，决赛选手可以对最终结果提出质疑，预期将不予处理。(包括并不限于侮辱诽谤)，反人类，亵渎现实宗教等内容。一旦违反将会失去参赛资格，作品将被删除。'
-  }
-]
-
-const nav6List = [
-  {
-    signal: 'text',
-    text: '作品提交截止时间为2023年8月1日0:00(GMT+8)。'
-  },
-  {
-    signal: 'email',
-    email: 'info@igagame.com',
-    text1: '请在截止日期前将作品运行文件及移动端apk打包发送邮件至',
-    text2:
-      '。邮件标题命名格式“【IGA<sup>2</sup>】+【队伍名称】+【作品名称】”，举例“IGA<sup>2</sup>艾吉欧盖姆迪赛”。'
-  },
-  {
-    signal: 'fillTable',
-    text: '请在截止日期前填写作品提交信息表格:',
-    url: 'https://bwbokl51ry.feishu.cn/share/base/form/shrcnvRMh0AaHhtfC5LxrpTgeDe'
-  },
-  {
-    signal: 'joinInTeam',
-    text: '参赛选手和队长可扫描下方二维码或通过群号加入赛事官方交流群:258175672',
-    cipher: '(入群暗号: IGA)',
-    img: testUrl
   }
 ]
 </script>
@@ -270,7 +258,7 @@ const nav6List = [
               <div class="sub-img">
                 <img :src="subTitleImg" />
               </div>
-              <div>{{ item.title }}</div>
+              <div class="sub-title">{{ item.title }}</div>
             </div>
             <div class="item" v-for="(item2, index2) in item.list" :key="item2.text">
               <div class="index-box">
@@ -285,17 +273,16 @@ const nav6List = [
               <div class="sub-img">
                 <img :src="subTitleImg" />
               </div>
-              <div>{{ item.title }}</div>
+              <div class="sub-title">{{ item.title }}</div>
             </div>
-            <div class="item-box row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
-              <div class="col item" v-for="item2 in item.list" :key="item2.text">
-                <div class="p-3">
-                  <div class="img-container">
-                    <img class="img" :src="item2.img" />
-                  </div>
-                  <div class="text">{{ item2.position }}</div>
-                  <div class="text">{{ item2.name }}</div>
+            <!-- <div class="item-box row row-cols-2 row-cols-lg-4 g-2 g-lg-3"> -->
+            <div class="item-box row">
+              <div class="person-item" v-for="item2 in item.list" :key="item2.text">
+                <div class="img-container">
+                  <img class="img" :src="item2.img" />
                 </div>
+                <div class="text">{{ item2.position }}</div>
+                <div class="text">{{ item2.name }}</div>
               </div>
             </div>
           </div>
@@ -318,20 +305,25 @@ const nav6List = [
               <div class="sub-img">
                 <img :src="subTitleImg" />
               </div>
-              <div>{{ item.title }}</div>
+              <div class="sub-title">{{ item.title }}</div>
             </div>
             <div class="item" v-for="(item2, index2) in item.list" :key="item2.text">
               <div class="index-box">
                 <div class="index">{{ index2 + 1 }}</div>
               </div>
               <div class="text">
+                <template v-if="item2.signal && item2.signal === 'submitContent'">
+                  <span> {{ item2.text }}</span
+                  ><span class="submit-content">{{ item2.content }}</span>
+                </template>
+
                 <template v-if="item2.signal && item2.signal === 'email'">
                   <span>{{ item2.text1 }}</span>
                   <a :href="`mailto:${item2.email}`">{{ item2.email }}</a>
                   <span>{{ item2.text2 }}</span>
                 </template>
 
-                <template v-else>
+                <template v-if="!item2.signal">
                   {{ item2.text }}
                 </template>
               </div>
@@ -362,26 +354,13 @@ const nav6List = [
           <div class="sub-title">
             <span class="un-select">- </span>奖项设置<span class="un-select"> -</span>
           </div>
-          <div class="itme" v-for="item in nav4List" :key="item.name">
-            <div class="row1">
-              <div class="sub-img">
-                <img :src="subTitleImg" />
-              </div>
-              <div class="text">{{ item.name }}</div>
+          <div class="item" v-for="item in nav4List" :key="item.name">
+            <div class="img-contain">
+              <img :src="item.img" />
             </div>
-
-            <div class="row2">
-              <div class="img-contain">
-                <img :src="item.img" />
-              </div>
-              <div class="text">
-                {{ item.desc }}
-              </div>
-            </div>
-
-            <div class="row3">
-              <div class="text">{{ item.award }}</div>
-            </div>
+            <div class="name">{{ item.name }}</div>
+            <div class="award">{{ item.award }}</div>
+            <div class="desc">{{ item.desc }}</div>
           </div>
         </div>
       </div>
@@ -420,35 +399,74 @@ const nav6List = [
         </div>
         <div class="content">
           <div class="list">
-            <div class="item" v-for="(item, index) in nav6List" :key="item.text">
-              <div class="index-box">
-                <div class="index">{{ index + 1 }}</div>
-              </div>
-              <div class="text">
-                <template v-if="item.signal === 'text'">
-                  {{ item.text }}
-                </template>
-
-                <template v-else-if="item.signal === 'email'">
-                  <span>{{ item.text1 }}</span>
-                  <a :href="`mailto:${item.email}`">{{ item.email }}</a>
-                  <span v-html="item.text2"></span>
-                </template>
-
-                <template v-else-if="item.signal === 'fillTable'">
-                  <div>{{ item.text }}</div>
-                  <a :href="item.url" target="_blank">{{ item.url }}</a>
-                </template>
-
-                <template v-else-if="item.signal === 'joinInTeam'">
-                  <span>{{ item.text }}</span>
-                  <span class="cipher">{{ item.cipher }}</span>
-                  <div class="img-wrap">
-                    <div class="img-contain">
-                      <img :src="item.img" alt="" />
-                    </div>
+            <div class="item">
+              <div class="item2-list">
+                <div class="index-box">
+                  <div class="index">1</div>
+                </div>
+                <div class="text">
+                  由【团队负责人】登录官网按照要求提交作以及相关团队信息
+                  <div class="link">
+                    <a href="https://poster.TIG.cn/r/NBDMVpAsJ0d4.html/" target="_blank"
+                      >https://poster.TIG.cn/r/NBDMVpAsJ0d4.html</a
+                    >
                   </div>
-                </template>
+                </div>
+              </div>
+              <div class="item2-list">
+                <div class="index-box">
+                  <div class="index">2</div>
+                </div>
+                <div class="text">
+                  作品提交截止时间为<span class="deadtime">2024年8月31日 0:00 (GMT+8)</span>
+                </div>
+              </div>
+              <div class="item2-list">
+                <div class="index-box">
+                  <div class="index">3</div>
+                </div>
+                <div class="text">
+                  请在截止日期前将作品运行文件及移动端apk打包发送邮件至<span
+                    ><a href="mailto:info@igagame.com">info@igagame.com</a></span
+                  >
+                  <div>
+                    邮件标题命名格式“【TIG】+【队伍名称】+【作品名称】”，举例“TIG_艾吉欧_埃及大冒险”。
+                  </div>
+                </div>
+              </div>
+              <div class="item2-list">
+                <div class="index-box">
+                  <div class="index">4</div>
+                </div>
+                <div class="text">
+                  请在截止日期前填写作品提交信息表格：
+                  <div>
+                    <a
+                      target="_blank"
+                      href="https://bwbokl51ry.feishu.cn/wiki/IVdpwWfFqiUbw7kRxSXcMQ00nCc"
+                      >https://bwbokl51ry.feishu.cn/wiki/IVdpwWfFqiUbw7kRxSXcMQ00nCc</a
+                    >
+                  </div>
+                  <div class="feishu_qr_img_wrap">
+                    <div class="feishu_qr_img">
+                      <img :src="feishuQRImg" alt="" />
+                    </div>
+
+                    <div class="qr_tip">也可扫描上方二维码填写作品提交信息</div>
+                  </div>
+                </div>
+              </div>
+              <div class="item2-list">
+                <div class="index-box">
+                  <div class="index">5</div>
+                </div>
+                <div class="text">
+                  参赛选手和队长可扫描下方二维码或通过群号加入赛事官方交流群: 545769639
+                  (入群暗号:iii)
+                  <div class="qq_qr_img">
+                    <img :src="qqGroupImg" alt="" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -482,6 +500,10 @@ const nav6List = [
 
 .text {
   font-size: 12rem;
+
+  .submit-content {
+    font-weight: bold;
+  }
 }
 
 .nav {
@@ -505,10 +527,10 @@ const nav6List = [
 
       .main-img {
         position: absolute;
-        top: -40rem;
-        left: calc(50% - (@mianTitleImgWidth / 9) / 2);
-        width: calc(@mianTitleImgWidth / 9);
-        height: calc(@mianTitleImgeight / 9);
+        top: -7rem;
+        left: calc(50% - (2166rem / 9) / 2);
+        width: calc(2166rem / 9);
+        height: calc(563rem / 9);
 
         img {
           width: 100%;
@@ -520,10 +542,6 @@ const nav6List = [
 }
 
 .nav {
-  .box-wrap {
-    // background-color: #000;
-  }
-
   .list {
     &:not(:first-child) {
       margin-top: 60rem;
@@ -537,21 +555,24 @@ const nav6List = [
 
       .sub-img {
         position: absolute;
-        top: -12rem;
-        left: 0rem;
-        width: calc(@subTitleImgWidtht / 10);
-        height: calc(@subTitleImgHeight / 10);
+        top: -20rem;
+        left: -6rem;
+        width: calc(1169rem / 8);
+        height: calc(502rem / 8);
 
         img {
           width: 100%;
           height: 100%;
         }
       }
+      .sub-title {
+        z-index: 1;
+        position: relative;
+      }
     }
 
     .item {
       display: flex;
-
       &:not(:last-child) {
         margin: 15rem 0;
       }
@@ -581,36 +602,47 @@ const nav6List = [
     .item-box {
       display: flex;
       flex-wrap: wrap;
+      width: 100%;
     }
 
-    .item {
+    .person-item {
+      width: 50%;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      margin: 15rem 0;
-      padding: 0;
+      align-items: center;
+      flex-direction: column;
 
-      .text {
-        font-size: 16rem;
-        text-align: center;
-        margin-left: 0;
+      &:nth-child(1) {
+        margin-bottom: 40rem;
+      }
+
+      &:nth-child(2) {
+        margin-bottom: 40rem;
       }
 
       .img-container {
         width: 120rem;
         height: 120rem;
-        margin-bottom: 10rem;
-        display: inline-block;
 
         img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
           border-radius: 100%;
+          object-fit: cover;
         }
       }
+
+      .text {
+        margin-top: 10rem;
+        font-size: 18rem;
+      }
     }
+  }
+}
+
+#nav1 {
+  .content {
+    line-height: 40rem;
   }
 }
 
@@ -637,82 +669,40 @@ const nav6List = [
 }
 
 #nav4 {
+  .list1 {
+    .text {
+      line-height: 40rem;
+    }
+  }
   .list2 {
-    .itme {
-      margin-top: 50rem;
-      margin-bottom: 80rem;
+    .item {
+      flex-direction: column;
+      margin-bottom: 50rem;
 
-      & > div {
-        margin: 20rem 0;
-      }
+      .img-contain {
+        width: 100rem;
+        height: 100rem;
 
-      .row1 {
-        height: calc(@subTitleImgHeight / 10);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-        padding-left: 26rem;
-
-        .sub-img {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: calc(@subTitleImgWidtht / 10);
-          height: calc(@subTitleImgHeight / 10);
-
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-
-        .img-contain {
-          width: 50rem;
-          height: 50rem;
-
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-
-        .text {
-          font-size: 18rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
         }
       }
 
-      .row2 {
-        display: flex;
-        align-items: center;
-
-        .img-contain {
-          img {
-            width: calc(512rem / 9);
-            height: calc(512rem / 9);
-          }
-
-          margin-right: 10rem;
-        }
-
-        .text {
-          flex: 1;
-          font-size: 17rem;
-        }
+      .name {
+        margin: 10rem 0;
+        font-size: 20rem;
       }
 
-      .row3 {
-        margin-right: -20rem;
-        display: flex;
-        justify-content: flex-end;
+      .award {
+        font-size: 17rem;
+      }
 
-        .text {
-          text-align: end;
-          font-size: 17rem;
-          padding: 0 30rem;
-          width: max-content;
-          border-bottom: 1px solid @titleColor;
-        }
+      .desc {
+        line-height: 40rem;
+        margin-top: 10rem;
+        font-size: 17rem;
       }
     }
   }
@@ -748,6 +738,59 @@ const nav6List = [
 
       a {
         word-wrap: break-word;
+      }
+    }
+  }
+
+  .item-list {
+    line-height: 45rem;
+    margin-left: 28rem;
+    font-size: 22rem;
+    margin-bottom: 20rem;
+  }
+  .item {
+    flex-direction: column;
+  }
+
+  .item2-list {
+    margin-bottom: 20rem;
+    display: flex;
+
+    .deadtime {
+      font-weight: bold;
+      // font-size: 21rem;
+    }
+
+    .feishu_qr_img_wrap {
+      margin-top: 20rem;
+      width: 100%;
+      text-align: center;
+
+      .feishu_qr_img {
+        width: calc(442rem / 3);
+        margin: 0 auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .qr_tip {
+        margin-top: 20rem;
+        font-size: 14rem;
+      }
+    }
+
+    .qq_qr_img {
+      width: calc(1284rem / 6);
+      height: calc(2283rem / 6);
+      margin: 0 auto;
+      margin-top: 20rem;
+
+      img {
+        width: 100%;
+        height: 100%;
       }
     }
   }

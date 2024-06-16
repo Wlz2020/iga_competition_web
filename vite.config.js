@@ -6,6 +6,9 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    host: '0.0.0.0'
+  },
   plugins: [vue(), VueDevTools()],
   resolve: {
     alias: {
