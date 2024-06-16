@@ -333,7 +333,7 @@ const nav5List = [
       </div>
     </div>
 
-    <!-- 奖项设置 -->
+    <!-- 奖项设置评奖说明 -->
     <div id="nav4" class="nav">
       <div class="box-wrap">
         <div class="title">
