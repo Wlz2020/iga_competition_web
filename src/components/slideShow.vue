@@ -1,13 +1,15 @@
 <script setup>
 import { ref } from 'vue'
 import ismobile from '@/utils/ismobile'
+import mobileMainImg from '@/assets/img/mobile-main.png'
+import pcMainImg from '@/assets/img/pc-main.png'
 
 const slideImgUrl = ref('')
 
 if (ismobile) {
-  slideImgUrl.value = 'https://website.xdcdn.net/poster/187168/IGA%E6%AF%94%E8%B5%9B/80aJQzv0.png'
+  slideImgUrl.value = mobileMainImg
 } else {
-  slideImgUrl.value = 'https://website.xdcdn.net/poster/187168/IGA%E6%AF%94%E8%B5%9B/8040dJde.png'
+  slideImgUrl.value = pcMainImg
 }
 </script>
 

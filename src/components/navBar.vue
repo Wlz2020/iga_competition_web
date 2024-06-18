@@ -2,7 +2,6 @@
 import ismobile from '@/utils/ismobile'
 import containWidth from '@/utils/page-contain-width'
 import logoImg from '@/assets/img/copyright/sponsor.png'
-import mainBgImg from '@/assets/img/main-bg.png'
 
 function scrollTo(num) {
   const fixedNavHeight = 90 // 假设导航栏的高度为90px
@@ -40,6 +39,8 @@ function scrollTo(num) {
 
         <div class="item nav-item" @click="scrollTo(4)" @mouseover="scrollTo(4)">奖项设置</div>
 
+        <div class="item nav-item" @click="scrollTo(7)" @mouseover="scrollTo(7)">惊喜奖品</div>
+
         <div class="item nav-item" @click="scrollTo(5)" @mouseover="scrollTo(5)">评审流程</div>
       </template>
 
@@ -47,9 +48,7 @@ function scrollTo(num) {
     </div>
   </nav>
 
-  <div class="bg-img">
-    <img :src="mainBgImg" alt="" />
-  </div>
+  <div class="bg-img" :class="ismobile ? 'bg-img-mobile' : 'bg-img-pc'"></div>
 
   <div class="placeholder-box"></div>
 </template>
@@ -66,14 +65,18 @@ function scrollTo(num) {
 .bg-img {
   position: fixed;
   top: @navHight;
-  left: 0;
-  width: 100%;
-  height: calc(100vh - @navHight);
+  left: -1vw;
+  top: -1vh;
+  width: 102vw;
+  height: 102vh;
+}
 
-  img {
-    width: 100%;
-    height: 100%;
-  }
+.bg-img-pc {
+  background: linear-gradient(to bottom right, #9366a7 40%, #3abfea 100%);
+}
+
+.bg-img-mobile {
+  background: linear-gradient(to bottom, #9366a7 20%, #3abfea 100%);
 }
 
 .nav-wrap {

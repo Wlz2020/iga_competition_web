@@ -1,9 +1,9 @@
 <script setup>
 import { onMounted } from 'vue'
+import ismobile from '@/utils/ismobile'
 import NavBar from '@/components/navBar.vue'
 import SlideShow from '@/components/slideShow.vue'
 import PageFooter from '@/components/pageFooter.vue'
-import ismobile from '@/utils/ismobile'
 import containWidth from '@/utils/page-contain-width'
 import mainTitleImg from '@/assets/img/main_title_bg.png'
 import subTitleImg from '@/assets/img/sub_title_bg.png'
@@ -14,6 +14,8 @@ import award3Img from '@/assets/img/award3.png'
 import award4Img from '@/assets/img/award4.png'
 import award5Img from '@/assets/img/award5.png'
 import award6Img from '@/assets/img/award6.png'
+import award7Img from '@/assets/img/award7.png'
+import awardWukongImg from '@/assets/img/award-wukong.png'
 
 import imgReviewPerson1 from '@/assets/img/reviewPerson1.png'
 import imgReviewPerson2 from '@/assets/img/reviewPerson2.png'
@@ -28,7 +30,6 @@ onMounted(() => {
   eleList.forEach((ele) => {
     ele.style.width = containWidth
   })
-  console.log(ismobile)
 })
 
 const nav1Content =
@@ -79,12 +80,22 @@ const nav2ListPerson = [
       },
       {
         img: imgReviewPerson3,
-        position: '现任南京艺术学院传媒学院院长',
+        position: '南京艺术学院传媒学院院长',
         name: '薛峰'
       },
       {
+        img: '',
+        position: '聂俊Gamker',
+        name: '聂俊Gamker'
+      },
+      {
+        img: '',
+        position: '资深独立游戏人',
+        name: '张大伟'
+      },
+      {
         img: imgReviewPerson4,
-        position: '现任游戏公司Stumbling Cat 执行董事（CEO）',
+        position: '游戏公司 Stumbling Cat 执行董事',
         name: 'Renee Gittins'
       }
     ]
@@ -171,37 +182,43 @@ const nav4List = [
   {
     img: award1Img,
     name: '大赛优胜作品',
-    desc: '授予在游戏创意，画面，叙事，技术力等多方面综合表现力最强的作品。游戏完成度高，体验流畅，内容丰富，创作角度新颖，且具备较高的迭代潜力。',
+    desc: '授予在游戏创意、画面、叙事、技术等多方面综合表现最强的作品。同时该作品需在游戏玩法及创作角度上具备新颖性，同时游戏体验流畅，内容丰富且具有较高的迭代潜力。',
+    award: '奖品: 5000元'
+  },
+  {
+    img: award3Img,
+    name: '最佳创新作品',
+    desc: '授予在关卡设计、核心玩法设计、游戏流程设计等方面表现最具创新性的作品。',
     award: '奖品: 5000元'
   },
   {
     img: award2Img,
-    name: '最佳画面作品',
-    desc: '授予在游戏美术风格，画面表现力，场景结构，特效等视觉综合表现最优秀的作品。',
+    name: '最佳创意画面作品 ',
+    desc: '授予在游戏美术风格、画面表现力、场景结构、特效等视觉表现方面最具创意的作品。',
     award: '奖品: 3000元'
   },
   {
-    img: award3Img,
-    name: '最佳创意作品',
-    desc: '授予在关卡设计，核心玩法设计，游戏流程设计等游戏设计方向综合表现最创新的作品。',
-    award: '奖品: 5000元'
+    img: award7Img,
+    name: '最佳创意用户体验作品',
+    desc: '授予在游戏交互界面，用户反馈等方面表现最独特且游戏体验流畅的作品。',
+    award: '奖品: 3000元'
   },
   {
     img: award4Img,
-    name: '最佳叙事作品',
-    desc: '授予在游戏剧情设计，游戏文案设计，游戏背景设计与概念深度方向综合表现最独特且优秀的作品。',
+    name: '最佳音频创意作品',
+    desc: '授予在游戏音频设计上进行创新，并且为玩家带来符合游戏核心玩法，拥有沉浸式体验的作品。',
     award: '奖品: 3000元'
   },
   {
     img: award5Img,
     name: '最佳学生作品',
-    desc: '授予由学生团体开发，在学生提交作品中综合表现力最强的作品。游戏完成度较高，体验流畅，内容丰富。',
+    desc: '授予由学生团队开发，在学生提交作品中综合表现最强的作品。该作品需具备完善且富有创意的核心玩法，并提供流畅的整体游戏体验。',
     award: '奖品: 2000元'
   },
   {
     img: award6Img,
-    name: '最具潜力游戏',
-    desc: '授予现阶段表现力虽然不是最突出，但是有着创意玩法与设计的作品，并且经业内评委认定有着迭代潜力的作品。',
+    name: '创意潜力作品奖',
+    desc: '授予现阶段表现虽不最突出，但在创意玩法、设计、画面、音频、动效等某一方面有出色表现，并被业内评委认定具有迭代潜力的作品。',
     award: ''
   }
 ]
@@ -237,7 +254,7 @@ const nav5List = [
           <div class="main-img">
             <img :src="mainTitleImg" />
           </div>
-          <div>赛事简介</div>
+          <div class="main-title">赛事简介</div>
         </div>
         <div class="content">{{ nav1Content }}</div>
       </div>
@@ -275,13 +292,17 @@ const nav5List = [
               </div>
               <div class="sub-title">{{ item.title }}</div>
             </div>
-            <!-- <div class="item-box row row-cols-2 row-cols-lg-4 g-2 g-lg-3"> -->
             <div class="item-box row">
-              <div class="person-item" v-for="item2 in item.list" :key="item2.text">
+              <div
+                class="person-item"
+                :class="ismobile ? 'person-item-mobile' : 'person-item-pc'"
+                v-for="item2 in item.list"
+                :key="item2.text"
+              >
                 <div class="img-container">
                   <img class="img" :src="item2.img" />
                 </div>
-                <div class="text">{{ item2.position }}</div>
+                <div class="text special-text">{{ item2.position }}</div>
                 <div class="text">{{ item2.name }}</div>
               </div>
             </div>
@@ -361,6 +382,36 @@ const nav5List = [
             <div class="name">{{ item.name }}</div>
             <div class="award">{{ item.award }}</div>
             <div class="desc">{{ item.desc }}</div>
+          </div>
+
+          <div class="tip">*获奖选手需自行承担奖金的意外所得税。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 惊喜奖品 -->
+    <div id="nav7" class="nav">
+      <div class="box-wrap">
+        <div class="title">
+          <div class="main-img">
+            <img :src="mainTitleImg" />
+          </div>
+          <div>惊喜奖品</div>
+        </div>
+
+        <div class="content">
+          <div class="img-view">
+            <img :src="awardWukongImg" alt="" srcset="" />
+          </div>
+
+          <div class="nav7-top">
+            <div>本次所有成功报名并提交作品</div>
+            <div>的参赛队伍</div>
+            <div>将有机会参与抽取</div>
+            <div>国产游戏《黑神话 悟空》！！！</div>
+          </div>
+          <div class="nav7-bottom">
+            *我们此次一共准备了100份《黑神话悟空》，其中80份将用于成功报名的队伍抽奖，20份将作为后续赛事活动中的奖品送出，后续请关注赛事官方公众号
           </div>
         </div>
       </div>
@@ -481,7 +532,6 @@ const nav5List = [
 <style lang="less" scoped>
 @titleColor: #fff;
 @titleFontSize: 30rem;
-@contentFontColor: #000;
 @contentFontSize: 20rem;
 @contentMargin: 50rem;
 @contentPadding: 40rem;
@@ -495,7 +545,6 @@ const nav5List = [
 }
 
 .page {
-  background-color: #000;
 }
 
 .text {
@@ -514,7 +563,6 @@ const nav5List = [
   .box-wrap {
     margin: 0 auto;
     font-size: @contentFontSize;
-    color: @contentFontColor;
     padding: @contentPadding;
     padding-bottom: 60rem;
     background-color: rgba(000, 000, 000, 0.25);
@@ -528,7 +576,7 @@ const nav5List = [
       .main-img {
         position: absolute;
         top: -7rem;
-        left: calc(50% - (2166rem / 9) / 2);
+        left: calc(50% - ((2166rem / 9) / 2));
         width: calc(2166rem / 9);
         height: calc(563rem / 9);
 
@@ -536,6 +584,11 @@ const nav5List = [
           width: 100%;
           height: 100%;
         }
+      }
+
+      .main-title {
+        position: relative;
+        z-index: 1;
       }
     }
   }
@@ -606,23 +659,16 @@ const nav5List = [
     }
 
     .person-item {
-      width: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-
-      &:nth-child(1) {
-        margin-bottom: 40rem;
-      }
-
-      &:nth-child(2) {
-        margin-bottom: 40rem;
-      }
+      margin-bottom: 40rem;
 
       .img-container {
         width: 120rem;
         height: 120rem;
+        margin-bottom: 10rem;
 
         img {
           width: 100%;
@@ -634,8 +680,24 @@ const nav5List = [
 
       .text {
         margin-top: 10rem;
+        text-align: center;
+        width: 100%;
         font-size: 18rem;
       }
+    }
+
+    .person-item-mobile {
+      width: 50%;
+
+      &:nth-child(5) {
+        .special-text {
+          height: 57rem;
+        }
+      }
+    }
+
+    .person-item-pc {
+      width: 33%;
     }
   }
 }
@@ -679,6 +741,19 @@ const nav5List = [
       flex-direction: column;
       margin-bottom: 50rem;
 
+      &:nth-child(5) {
+        .img-contain {
+          width: 110rem;
+          height: 110rem;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+
       .img-contain {
         width: 100rem;
         height: 100rem;
@@ -696,15 +771,19 @@ const nav5List = [
       }
 
       .award {
-        font-size: 17rem;
+        font-size: 19rem;
+        margin-bottom: 10rem;
       }
 
       .desc {
         line-height: 40rem;
-        margin-top: 10rem;
         font-size: 17rem;
       }
     }
+  }
+
+  .tip {
+    font-size: 15rem;
   }
 }
 
@@ -758,7 +837,6 @@ const nav5List = [
 
     .deadtime {
       font-weight: bold;
-      // font-size: 21rem;
     }
 
     .feishu_qr_img_wrap {
@@ -793,6 +871,29 @@ const nav5List = [
         height: 100%;
       }
     }
+  }
+}
+
+#nav7 {
+  .img-view {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .nav7-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20rem 0 50rem;
+  }
+
+  .nav7-bottom {
+    font-size: 16rem;
   }
 }
 </style>

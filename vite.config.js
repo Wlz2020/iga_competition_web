@@ -14,8 +14,8 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  },
+  }
 
   // eslint-disable-next-line no-undef
-  base: process.env.NODE_ENV === 'production' ? '/iga_competition_web/' : '/'
+  // base: process.env.NODE_ENV === 'production' ? '/iga_competition_web/' : '/'
 })

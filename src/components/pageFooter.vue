@@ -51,6 +51,8 @@ import ImgCoSponsor5Url from '@/assets/img/copyright/co-sponsor5.png'
 
 .footer-wrap {
   position: relative;
+  width: 100%;
+  overflow: hidden;
 
   .box-wrap {
     margin: 0 auto;
@@ -87,30 +89,30 @@ import ImgCoSponsor5Url from '@/assets/img/copyright/co-sponsor5.png'
 
 .co-sponsor-wrap {
   margin-top: 50rem;
-  width: 1000rem;
   justify-content: center;
   display: flex;
+  transform: scale(0.8);
 
   .img-contain1 {
-    width: calc(813rem / 6);
+    width: calc(813rem / 4);
     margin-right: 60rem;
   }
 
   .img-contain2 {
-    width: calc(822rem / 5.5);
+    width: calc(822rem / 6);
   }
 
   .img-contain3 {
-    width: calc(400rem / 3);
+    width: calc(400rem / 2.5);
   }
 
   .img-contain4 {
-    width: calc(1280rem / 4);
+    width: calc(1280rem / 5.2);
     margin: 0 50rem;
   }
 
   .img-contain5 {
-    width: calc(1280rem / 7);
+    width: calc(1280rem / 12);
   }
 
   img {

@@ -4,13 +4,13 @@ const judgeIsMobile = () => {
   const userAgent = navigator.userAgent || navigator.vendor || window.opera
   const res = isMobile(userAgent).any
 
-  if (res) {
-    // 这是移动设备（平板也包含在内）
-    console.log('是移动设备或平板')
-  } else {
-    // 这是桌面设备
-    console.log('是桌面设备')
-  }
+  // if (res) {
+  //   // 这是移动设备（平板也包含在内）
+  //   console.log('是移动设备或平板')
+  // } else {
+  //   // 这是桌面设备
+  //   console.log('是桌面设备')
+  // }
 
   return res
 }
