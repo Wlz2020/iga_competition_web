@@ -7,6 +7,7 @@ import PageFooter from '@/components/pageFooter.vue'
 import containWidth from '@/utils/page-contain-width'
 import mainTitleImg from '@/assets/img/main_title_bg.png'
 import subTitleImg from '@/assets/img/sub_title_bg.png'
+import ImgSponsorUrl from '@/assets/img/copyright/sponsor.png'
 
 import award1Img from '@/assets/img/award1.png'
 import award2Img from '@/assets/img/award2.png'
@@ -86,16 +87,19 @@ const nav2ListPerson = [
       {
         img: '',
         position: '聂俊Gamker',
-        name: '聂俊Gamker'
+        name: '聂俊Gamker',
+        position1: ' '
       },
       {
         img: '',
         position: '资深独立游戏人',
-        name: '张大伟'
+        name: '张大伟',
+        position1: ' '
       },
       {
         img: imgReviewPerson4,
-        position: '游戏公司 Stumbling Cat 执行董事',
+        position: '国际游戏开发者协会（igda）',
+        position1: '前执行董事',
         name: 'Renee Gittins'
       }
     ]
@@ -141,7 +145,7 @@ const nav3List = [
       },
       {
         signal: 'email',
-        email: 'brand@igagame.com',
+        email: 'tigindie@126.com',
         text1: '作品提交打包上传至赛事邮箱:',
         text2:
           '，填写作品信息表，包含必传材料:运行文件;宣传材料:开发Vlog/Plog，其他游戏介绍视频/文档/PPT。缺失任一必传材料视为无效参赛。'
@@ -160,7 +164,7 @@ const nav3List = [
       {
         signal: 'submitContent',
         content: '提交时一并提交队伍信息表格。',
-        text: '在提交截止日期前（8月30日）前，选手可在任意时段提交作品。'
+        text: '在提交截止日期前（8月31日）前，选手可在任意时段提交作品。'
       },
       {
         text: '选手可以个人或队伍身份提交作品，个人身份提交需承担80%以上的作品内容开发。'
@@ -223,6 +227,29 @@ const nav4List = [
   }
 ]
 
+const nav4List2 = [
+  {
+    name: '游戏玩法',
+    desc: '此次大赛鼓励游戏机制的创新性和独特性，期望看到作品中有大胆尝试新的游戏规则和互动方式，为玩家带来耳目一新的体验。'
+  },
+  {
+    name: '画面设计',
+    desc: '不仅仅是画面的美观度，我们也同样重视觉风格的独特性和创意。评审将关注作品在视觉艺术方面的独特表达和艺术风格。'
+  },
+  {
+    name: '用户体验（UX）',
+    desc: '优秀的用户体验是成功游戏的重要因素，我们期待参赛作品能在界面设计、操作流程等方面给玩家带来全新且流畅的体验。'
+  },
+  {
+    name: '动效设计',
+    desc: '动效不仅是视觉效果的提升，更是游戏互动体验的重要组成部分。我们希望看到在动效设计上有创意和巧思的作品。'
+  },
+  {
+    name: '音频设计',
+    desc: '音效和音乐是营造游戏氛围的重要元素。我们鼓励参赛作品在音频设计上进行创新，为玩家带来更为沉浸的体验。'
+  }
+]
+
 const nav5List = [
   {
     text: '5月1日-7月31日，选手可报名参赛并提交作品。'
@@ -257,6 +284,19 @@ const nav5List = [
           <div class="main-title">赛事简介</div>
         </div>
         <div class="content">{{ nav1Content }}</div>
+        <div class="desc">
+          <div class="main-img-wrap">
+            <img :src="ImgSponsorUrl" />
+          </div>
+
+          <div class="text">
+            Triple iii Guild（3i独立游戏公会：indie innovation
+            incubator）致力于连接国内外独立游戏开发者，推动创造性成长与行业革新。
+          </div>
+          <div class="text line2">
+            我们定期策划各类活动，促进交流与合作，整合海内外行业资源，支持初创和独立游戏团队的成长与发展。
+          </div>
+        </div>
       </div>
     </div>
 
@@ -267,7 +307,7 @@ const nav5List = [
           <div class="main-img">
             <img :src="mainTitleImg" />
           </div>
-          <div>评审组织</div>
+          <div class="main-title">评审组织</div>
         </div>
         <div class="content">
           <div class="list" v-for="item in nav2List" :key="item.title">
@@ -302,7 +342,12 @@ const nav5List = [
                 <div class="img-container">
                   <img class="img" :src="item2.img" />
                 </div>
-                <div class="text special-text">{{ item2.position }}</div>
+                <div class="text line2">
+                  {{ item2.position }}
+                </div>
+                <div class="text">
+                  {{ item2.position1 }}
+                </div>
                 <div class="text">{{ item2.name }}</div>
               </div>
             </div>
@@ -318,7 +363,7 @@ const nav5List = [
           <div class="main-img">
             <img :src="mainTitleImg" />
           </div>
-          <div>作品要求</div>
+          <div class="main-title">作品要求</div>
         </div>
         <div class="content">
           <div class="list" v-for="item in nav3List" :key="item.title">
@@ -361,14 +406,26 @@ const nav5List = [
           <div class="main-img">
             <img :src="mainTitleImg" />
           </div>
-          <div>奖项设置</div>
+          <div class="main-title">奖项设置</div>
         </div>
         <div class="list list1">
           <div class="sub-title">
             <span class="un-select">- </span>评奖说明<span class="un-select"> -</span>
           </div>
           <div class="text">
-            为鼓励更多参赛选手投入到创新与精致的游戏创作中，大赛组委会设立的评审团将评选出一个综合表现最优秀的作品，数个在不同领域有突出表现力的作品。评审团将遵守公平公正的评审态度，以专业的角度对所有参赛作品予以打分。进入到决赛的作品评审团会采取更为细致严格的答辩方式评判作品。
+            TIG独立游戏开发大赛的评审标准同样注重参赛作品的创新性，而不仅仅是游戏体量。参赛作品在具备基本的完成度和流畅的游戏体验的前提下，具备以下标准将会是加分项：
+          </div>
+          <div class="item" v-for="(item, index) in nav4List2" :key="item.name">
+            <div class="index-box">
+              <div class="index specail-index">{{ index + 1 }}</div>
+            </div>
+            <div class="text">
+              <span class="specail-name">{{ item.name }}：</span>
+              <span>{{ item.desc }}</span>
+            </div>
+          </div>
+          <div>
+            我们的评审团队将综合以上各方面的表现，评选出具有创新精神和独特魅力的独立游戏作品。希望每一位参赛者都能充分发挥自己的创意，带来精彩的游戏作品。
           </div>
         </div>
         <div class="list list2">
@@ -396,7 +453,7 @@ const nav5List = [
           <div class="main-img">
             <img :src="mainTitleImg" />
           </div>
-          <div>惊喜奖品</div>
+          <div class="main-title">惊喜奖品</div>
         </div>
 
         <div class="content">
@@ -424,7 +481,7 @@ const nav5List = [
           <div class="main-img">
             <img :src="mainTitleImg" />
           </div>
-          <div>评审流程</div>
+          <div class="main-title">评审流程</div>
         </div>
         <div class="content">
           <div class="list">
@@ -458,9 +515,7 @@ const nav5List = [
                 <div class="text">
                   由【团队负责人】登录官网按照要求提交作以及相关团队信息
                   <div class="link">
-                    <a href="https://poster.TIG.cn/r/NBDMVpAsJ0d4.html/" target="_blank"
-                      >https://poster.TIG.cn/r/NBDMVpAsJ0d4.html</a
-                    >
+                    <a href="https://www.tig-indie.cn" target="_blank">https://www.tig-indie.cn</a>
                   </div>
                 </div>
               </div>
@@ -478,7 +533,7 @@ const nav5List = [
                 </div>
                 <div class="text">
                   请在截止日期前将作品运行文件及移动端apk打包发送邮件至<span
-                    ><a href="mailto:info@igagame.com">info@igagame.com</a></span
+                    ><a href="mailto:tigindie@126.com">tigindie@126.com</a></span
                   >
                   <div>
                     邮件标题命名格式“【TIG】+【队伍名称】+【作品名称】”，举例“TIG_艾吉欧_埃及大冒险”。
@@ -494,8 +549,8 @@ const nav5List = [
                   <div>
                     <a
                       target="_blank"
-                      href="https://bwbokl51ry.feishu.cn/wiki/IVdpwWfFqiUbw7kRxSXcMQ00nCc"
-                      >https://bwbokl51ry.feishu.cn/wiki/IVdpwWfFqiUbw7kRxSXcMQ00nCc</a
+                      href="https://bwbokl51ry.feishu.cn/share/base/form/shrcnZMdS99n68h4eB4pbljG9Ke"
+                      >https://bwbokl51ry.feishu.cn/share/base/form/shrcnZMdS99n68h4eB4pbljG9Ke</a
                     >
                   </div>
                   <div class="feishu_qr_img_wrap">
@@ -514,8 +569,10 @@ const nav5List = [
                 <div class="text">
                   参赛选手和队长可扫描下方二维码或通过群号加入赛事官方交流群: 545769639
                   (入群暗号:iii)
-                  <div class="qq_qr_img">
-                    <img :src="qqGroupImg" alt="" />
+                  <div class="qq_qr_img_wrap">
+                    <div class="qq_qr_img">
+                      <img :src="qqGroupImg" alt="" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -575,14 +632,15 @@ const nav5List = [
 
       .main-img {
         position: absolute;
-        top: -7rem;
-        left: calc(50% - ((2166rem / 9) / 2));
+        top: -8rem;
+        left: calc(50% - ((2200rem / 9) / 2));
         width: calc(2166rem / 9);
         height: calc(563rem / 9);
 
         img {
           width: 100%;
           height: 100%;
+          object-fit: contain;
         }
       }
 
@@ -608,14 +666,15 @@ const nav5List = [
 
       .sub-img {
         position: absolute;
-        top: -20rem;
-        left: -6rem;
-        width: calc(1169rem / 8);
-        height: calc(502rem / 8);
+        top: -18rem;
+        left: -8rem;
+        width: calc(1169rem / 7.5);
+        height: calc(502rem / 7.5);
 
         img {
           width: 100%;
           height: 100%;
+          object-fit: contain;
         }
       }
       .sub-title {
@@ -637,9 +696,13 @@ const nav5List = [
           width: 28rem;
           font-size: 18rem;
           color: #000;
-          font-weight: bold;
           text-align: center;
           border-radius: 100%;
+          letter-spacing: 0;
+        }
+
+        .specail-index {
+          margin-top: 7rem;
         }
       }
 
@@ -647,6 +710,11 @@ const nav5List = [
         flex: 1;
         margin-left: 10rem;
         font-size: 18rem;
+      }
+
+      .specail-name {
+        font-size: 19rem;
+        font-weight: bold;
       }
     }
   }
@@ -660,7 +728,7 @@ const nav5List = [
 
     .person-item {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
       flex-direction: column;
       margin-bottom: 40rem;
@@ -688,16 +756,40 @@ const nav5List = [
 
     .person-item-mobile {
       width: 50%;
+      .text {
+        font-size: 17rem;
+      }
+
+      &:nth-child(3) {
+        width: 100%;
+      }
+
+      &:nth-child(6) {
+        width: 100%;
+      }
 
       &:nth-child(5) {
-        .special-text {
-          height: 57rem;
+        .line2 {
+          height: 34rem;
+          line-height: 60rem;
         }
       }
     }
 
     .person-item-pc {
       width: 33%;
+
+      &:nth-child(4) {
+        .line2 {
+          margin-top: 40rem;
+        }
+      }
+
+      &:nth-child(5) {
+        .line2 {
+          margin-top: 40rem;
+        }
+      }
     }
   }
 }
@@ -705,6 +797,31 @@ const nav5List = [
 #nav1 {
   .content {
     line-height: 40rem;
+  }
+
+  .desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .main-img-wrap {
+      width: 200rem;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .text {
+      line-height: 40rem;
+      font-size: 20rem;
+    }
+
+    .line2 {
+      margin-top: 20rem;
+    }
   }
 }
 
@@ -841,7 +958,7 @@ const nav5List = [
 
     .feishu_qr_img_wrap {
       margin-top: 20rem;
-      width: 100%;
+      width: calc(100% - 54rem);
       text-align: center;
 
       .feishu_qr_img {
@@ -858,6 +975,10 @@ const nav5List = [
         margin-top: 20rem;
         font-size: 14rem;
       }
+    }
+
+    .qq_qr_img_wrap {
+      width: calc(100% - 54rem);
     }
 
     .qq_qr_img {

@@ -27,24 +27,24 @@ function scrollTo(num) {
 <template>
   <nav class="nav-wrap">
     <div class="box-wrap" :style="{ width: containWidth }">
-      <div class="item img-wrap" @click="scrollTo(0)" @mouseover="scrollTo(0)">
+      <div class="item img-wrap" @click="scrollTo(0)">
         <img class="img" :src="logoImg" />
       </div>
       <template v-if="!ismobile">
-        <div class="item nav-item" @click="scrollTo(1)" @mouseover="scrollTo(1)">赛事简介</div>
+        <div class="item nav-item" @click="scrollTo(1)">赛事简介</div>
 
-        <div class="item nav-item" @click="scrollTo(2)" @mouseover="scrollTo(2)">评审组织</div>
+        <div class="item nav-item" @click="scrollTo(2)">评审组织</div>
 
-        <div class="item nav-item" @click="scrollTo(3)" @mouseover="scrollTo(3)">作品要求</div>
+        <div class="item nav-item" @click="scrollTo(3)">作品要求</div>
 
-        <div class="item nav-item" @click="scrollTo(4)" @mouseover="scrollTo(4)">奖项设置</div>
+        <div class="item nav-item" @click="scrollTo(4)">奖项设置</div>
 
-        <div class="item nav-item" @click="scrollTo(7)" @mouseover="scrollTo(7)">惊喜奖品</div>
+        <div class="item nav-item" @click="scrollTo(7)">惊喜奖品</div>
 
-        <div class="item nav-item" @click="scrollTo(5)" @mouseover="scrollTo(5)">评审流程</div>
+        <div class="item nav-item" @click="scrollTo(5)">评审流程</div>
       </template>
 
-      <div class="item nav-item" @click="scrollTo(6)" @mouseover="scrollTo(6)">我要参赛</div>
+      <div class="item nav-item join-in" @click="scrollTo(6)">我要参赛</div>
     </div>
   </nav>
 
@@ -54,7 +54,7 @@ function scrollTo(num) {
 </template>
 
 <style lang="less" scoped>
-@balckTheme: #11b6d1;
+@balckTheme: #9366a7;
 @titleColor: #fff;
 @navHight: 80rem;
 
@@ -120,5 +120,12 @@ function scrollTo(num) {
   &:hover {
     cursor: pointer;
   }
+}
+
+.join-in {
+  color: @balckTheme;
+  background-color: #fff;
+  padding: 10rem 10rem;
+  border-radius: 10rem;
 }
 </style>
