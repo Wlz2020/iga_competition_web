@@ -22,6 +22,9 @@ import imgReviewPerson1 from '@/assets/img/reviewPerson1.png'
 import imgReviewPerson2 from '@/assets/img/reviewPerson2.png'
 import imgReviewPerson3 from '@/assets/img/reviewPerson3.png'
 import imgReviewPerson4 from '@/assets/img/reviewPerson4.png'
+import imgReviewPerson5 from '@/assets/img/reviewPerson5.png'
+import imgReviewPerson6 from '@/assets/img/reviewPerson6.png'
+import imgReviewPerson7 from '@/assets/img/reviewPerson7.png'
 
 import feishuQRImg from '@/assets/img/feishu_qr.png'
 import qqGroupImg from '@/assets/img/qq_group.png'
@@ -72,29 +75,38 @@ const nav2ListPerson = [
       {
         img: imgReviewPerson1,
         position: 'IGA Studio创始人',
-        name: '李肇文（Brad）'
+        name: '李肇文（Brad）',
+        position1: ' '
       },
       {
         img: imgReviewPerson2,
         position: '独立之光副总裁',
-        name: '熊Tony'
+        name: '熊攀峰',
+        position1: ' '
       },
       {
         img: imgReviewPerson3,
         position: '南京艺术学院传媒学院院长',
-        name: '薛峰'
-      },
-      {
-        img: '',
-        position: '聂俊Gamker',
-        name: '聂俊Gamker',
+        name: '薛峰',
         position1: ' '
       },
       {
-        img: '',
-        position: '资深独立游戏人',
-        name: '张大伟',
-        position1: ' '
+        img: imgReviewPerson5,
+        position: 'Veewo Games 创始人',
+        name: '杨迅（Jason）',
+        position1: ''
+      },
+      {
+        img: !ismobile ? imgReviewPerson6 : imgReviewPerson7,
+        position: !ismobile ? '中国电影美术学会CG' : '不义联萌创始人',
+        name: !ismobile ? '聂俊Gamker' : '张大伟',
+        position1: !ismobile ? '艺术专业委员会副主任' : ''
+      },
+      {
+        img: ismobile ? imgReviewPerson6 : imgReviewPerson7,
+        position: ismobile ? '中国电影美术学会CG' : '不义联萌创始人',
+        name: ismobile ? '聂俊Gamker' : '张大伟',
+        position1: ismobile ? '艺术专业委员会副主任' : ''
       },
       {
         img: imgReviewPerson4,
@@ -159,7 +171,7 @@ const nav3List = [
     title: '参赛须知',
     list: [
       {
-        text: '队伍负责人先添加活动负责人微信，进入队长通知群，在官网页面点击【我要参赛】查看详情。'
+        text: '队伍负责人先添加进入赛事官方QQ群, 根据群公告进入队长通知群, 在官网页面点击【我要参赛】查看详情'
       },
       {
         signal: 'submitContent',
@@ -255,7 +267,7 @@ const nav5List = [
     text: '5月1日-7月31日，选手可报名参赛并提交作品。'
   },
   {
-    text: '8月1日-8月15日，大赛评审团将对所有参赛作品进行预审，选出15个作品参加决赛(具体数量视提交作品数量而定)。'
+    text: '8月1日-8月15日，大赛评审团将对所有参赛作品进行预审，选出20个作品参加决赛(具体数量视提交作品数量而定)。'
   },
   {
     text: '8月15日-8月22日，选手可对预审结果提出质疑，预期将不予处理。'
@@ -342,10 +354,10 @@ const nav5List = [
                 <div class="img-container">
                   <img class="img" :src="item2.img" />
                 </div>
-                <div class="text line2">
+                <div class="text">
                   {{ item2.position }}
                 </div>
-                <div class="text">
+                <div class="text position1">
                   {{ item2.position1 }}
                 </div>
                 <div class="text">{{ item2.name }}</div>
@@ -503,7 +515,7 @@ const nav5List = [
           <div class="main-img">
             <img :src="mainTitleImg" />
           </div>
-          <div>报名流程</div>
+          <div class="main-title">报名流程</div>
         </div>
         <div class="content">
           <div class="list">
@@ -532,7 +544,7 @@ const nav5List = [
                   <div class="index">3</div>
                 </div>
                 <div class="text">
-                  请在截止日期前将作品运行文件及移动端apk打包发送邮件至<span
+                  请在截止日期前将作品运行文件打包发送邮件至<span
                     ><a href="mailto:tigindie@126.com">tigindie@126.com</a></span
                   >
                   <div>
@@ -545,7 +557,7 @@ const nav5List = [
                   <div class="index">4</div>
                 </div>
                 <div class="text">
-                  请在截止日期前填写作品提交信息表格：
+                  请在截止日期前填写作品提交信息表格（将作品发送至邮箱后，并提交作品信息表后，视为成功报名）
                   <div>
                     <a
                       target="_blank"
@@ -728,7 +740,7 @@ const nav5List = [
 
     .person-item {
       display: flex;
-      justify-content: space-around;
+      justify-content: flex-start;
       align-items: center;
       flex-direction: column;
       margin-bottom: 40rem;
@@ -747,48 +759,54 @@ const nav5List = [
       }
 
       .text {
-        margin-top: 10rem;
         text-align: center;
         width: 100%;
-        font-size: 18rem;
+        font-size: 17rem;
+        // border: 1px solid red;
       }
     }
 
     .person-item-mobile {
       width: 50%;
-      .text {
-        font-size: 17rem;
-      }
 
       &:nth-child(3) {
         width: 100%;
       }
 
       &:nth-child(6) {
-        width: 100%;
+        img {
+          background-color: #fff;
+        }
       }
 
-      &:nth-child(5) {
-        .line2 {
-          height: 34rem;
-          line-height: 60rem;
+      &:nth-child(6) {
+        .position1 {
+          height: 29rem;
         }
       }
     }
 
     .person-item-pc {
-      width: 33%;
+      width: 33.3%;
 
-      &:nth-child(4) {
-        .line2 {
-          margin-top: 40rem;
+      // &:nth-child(4) {
+      //   width: 30%;
+      //   padding-left: 3.3%;
+      // }
+
+      &:nth-child(5) {
+        img {
+          background-color: #fff;
         }
       }
 
-      &:nth-child(5) {
-        .line2 {
-          margin-top: 40rem;
-        }
+      // &:nth-child(6) {
+      //   width: 30%;
+      //   padding-right: 3.3%;
+      // }
+
+      &:nth-child(7) {
+        width: 100%;
       }
     }
   }
